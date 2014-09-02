@@ -1,0 +1,17 @@
+<div class="panel panel-info">
+   <div class="panel-heading"><%= @event.name%></div>
+	  <div class="panel-body">
+	    Happening: <%= @event.due_date%> <br>
+	    Created On: <%= @event.created_at%> <br>
+	    Last Updated: <%= @event.updated_at%> <br>
+	    Total Attending: <%= @event.users.size %> <br>
+	    <% @event.users.each_with_index do |user, index|%>
+	      <% if index == @event.users.size - 1%>
+        	<span title="<%= user.email%>"><%= "#{user.name}"%></span> 
+	      <% else %>
+        	<span title="<%= user.email%>"><%= "#{user.name}, "%></span> 
+	      <% end %>
+	    <% end %>
+	  </div>
+
+</div>

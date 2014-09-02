@@ -1,0 +1,28 @@
+<%if @events.present? %>
+	<table class="table">
+		<thead>
+			<th>#</th>
+			<th>Event</th>
+			<th>Happening</th>
+			<th>Participant count</th>
+			<th>Action Items</th>
+		</thead>
+		<tbody>
+	    <% @events.each_with_index do |event, index| %>
+        <tr>
+        	<td><%= index + 1 %></td>
+          <td><%= event.name rescue '-'%></td> 
+          <td><%= event.due_date rescue '-'%></td> 
+          <td><%= event.users.size rescue '-'%></td> 
+          <td>
+          	<%= status event%> 
+          	<%= link_to "View", event_path(event), id: "event_#{event.id}", class: "view_link" %>
+          </td> 
+        </tr>
+	    <% end %>
+		</tbody>
+	</table>
+
+<% else %>
+  No records found
+<% end %>

@@ -1,0 +1,60 @@
+input[type="text"], textarea{
+	padding: 3px;
+	border-radius: 5px;
+	border: 1px solid #2eace6;
+}
+input[type="submit"]{
+	border: none;
+	width:118px;
+	margin:2% 0%;
+}
+
+.xlarge{
+	width: 250px;
+}
+
+.xmedium{
+	width: 122px;
+}
+
+form{
+  margin: 2% 2%;
+}
+
+form label {
+	margin-right: 5px; 
+	width: 100px;
+	vertical-align: top;
+}
+
+form .row{
+	margin-bottom: 14px;
+}
+
+.center{
+	text-align: center;
+}
+
+textarea{
+	overflow: auto;
+}
+
+.glyphicon-ok-sign{
+	color: green;
+}
+
+.glyphicon-remove-sign{
+	color:red;
+}
+
+.action_items{
+	/*font-size: 20px;*/
+	/*font-weight: bold;*/
+}
+.attend{
+	color: green;
+}
+
+.unattend{
+	color: red;
+}

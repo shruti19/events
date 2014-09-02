@@ -1,26 +1,14 @@
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Events</div>
-  <div class="panel-body">
-	    
-		<!-- Nav tabs -->
+	<div class="events_list">
 		<ul class="nav nav-tabs" role="tablist" id="events_list">
 		  <li class="active"><a href="#all" role="tab" data-toggle="tab" class="tab_link" id="all">All</a></li>
 		  <li><a href="#top" role="tab" data-toggle="tab" class="tab_link" id="top_events">Top Events</a></li>
 		  <li><a href="#attending" role="tab" data-toggle="tab" class="tab_link" id="attending">Attending</a></li>
 		</ul>
 
-		<!-- Tab panes -->
 		<div class="tab-content">
 		  <div class="tab-pane active" id="refreshed_list">
 			  <%=render 'list' %>
 		  </div>
-		  <!-- <div class="tab-pane" id="top">
-			  <%#=render 'list', locales: {events: @top_events} %>
-		  </div>
-		  <div class="tab-pane" id="attending">
-			  <%#=render 'list', locales: {events: @attending} %>
-		  </div> -->
 		</div>
-  </div>
-</div>
+	</div>
+ 

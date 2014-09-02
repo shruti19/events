@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/fonts/glyphicons-halflings-regular.eot');
+  src: url('/assets/fonts/glyphicons-halflings-regular.svg');
+  src: url('/assets/fonts/glyphicons-halflings-regular.ttf');
+  src: url('/assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
 input[type="text"], textarea{
 	padding: 3px;
 	border-radius: 5px;
@@ -23,7 +31,7 @@ form{
 
 form label {
 	margin-right: 5px; 
-	width: 100px;
+	width: 180px;
 	vertical-align: top;
 }
 
@@ -48,7 +56,7 @@ textarea{
 }
 
 .action_items{
-	/*font-size: 20px;*/
+	font-size: 14px;
 	/*font-weight: bold;*/
 }
 .attend{
@@ -57,4 +65,8 @@ textarea{
 
 .unattend{
 	color: red;
+}
+
+.view_link{
+  
 }

@@ -36,11 +36,11 @@ class Event < ActiveRecord::Base
 	# end
     
   def discount_applicable? current_user
-    (current_user.gender.to_s == "female" && discount.present?) ? discount : nil
+    (current_user.gender.to_s == "female" && fee.present? ) ? true : false
   end
  
   def process_discount
-    (discount.present? && fee.present?) ? ((100 - discount.to_f)/100)*fee : nil
+    fee.present? ? ((100 - DISCOUNT_FOR_FEMALE).to_f/100)*fee : nil
   end
   
   def self.past_events

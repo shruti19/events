@@ -1,15 +1,25 @@
-<div class="panel panel-info">
+<div class="panel panel-info view_event">
    <div class="panel-heading"><%= @event.name%></div>
 	  <div class="panel-body">
-	    Happening: <%= @event.due_date.strftime("%d %b %y")%> <br>
-	    Created On: <%= @event.created_at.strftime("%d %b %y %H:%M:%S")%> <br>
-	    Fee: <%= @event.fee rescue 'Free'%> (* 5% discount if Female) <br>
-	    Last Updated: <%= @event.updated_at.strftime("%d %b %y %H:%M:%S")%> <br>
-	    Total Attending: <%= @event.users.size %> <br>
-      Status: <%= user_event_status @event%> <br>
-      <% if @event.process_discount.present? %>
-      	You pay: <%= @event.process_discount %> <br>
+	    <label>Happening:</label> 
+	    	<%= @event.due_date.strftime("%d %b %y")%> <br>
+	    <label>Created On: </label> 
+	   	  <%= @event.created_at.strftime("%d %b %y %H:%M:%S")%> <br>
+	    <label>Fee: </label> 
+	   	  <%= @event.fee.nil? ? 'Free' : @event.fee rescue 'Free' %> (* 5% discount if Female) <br>
+	    <label>Last Updated: </label> 
+	      <%= @event.updated_at.strftime("%d %b %y %H:%M:%S")%> <br>
+	    <label>Total Attending: </label> 
+	      <%= @event.users.size %> <br>
+      <label>Status: </label> 
+        <%= user_event_status @event%> <br>
+      
+      <% if @event.discount_applicable? current_user %>
+      	<label>You pay: </label> 
+      	<%= @event.process_discount %> <br>
       <% end %>
+      
+      <label>People attending this event: </label> 
 	    <% @event.users.each_with_index do |user, index|%>
 	      <% if index == @event.users.size - 1%>
         	<span title="<%= user.email%>"><%= "#{user.name}"%></span> 

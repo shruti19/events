@@ -48,7 +48,7 @@ for i in 1..15
     :description => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
     :due_date => Date.today + i.day,
     :fee => [nil, 500, 1000, 1500, 2000].sample,
-    :discount => [nil, 5].sample}
+    :discount => 5}
 end
 
 #### Create 5 past events
@@ -57,7 +57,7 @@ for i in 16..20
     :description => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
     :due_date => Date.today - i.day,
     :fee => [nil, 500, 1000, 1500, 2000].sample,
-    :discount => [nil, 5].sample}
+    :discount => 5}
 end
 puts "Creating events..."
 Event.create!(events)

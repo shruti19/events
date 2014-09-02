@@ -40,7 +40,7 @@ class Event < ActiveRecord::Base
   end
  
   def process_discount
-    (discount.present? && fee.present?) ? (discount.to_f/100)*fee : nil
+    (discount.present? && fee.present?) ? ((100 - discount.to_f)/100)*fee : nil
   end
   
   def self.past_events

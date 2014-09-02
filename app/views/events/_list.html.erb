@@ -12,10 +12,10 @@
         <tr>
         	<td><%= index + 1 %></td>
           <td><%= event.name rescue '-'%></td> 
-          <td><%= event.due_date rescue '-'%></td> 
+          <td><%= event.due_date.strftime("%d %b %y") rescue '-'%></td> 
           <td><%= event.users.size rescue '-'%></td> 
           <td>
-          	<%= status event%> 
+          	<%= status event rescue nil%> 
           	<%= link_to "View", event_path(event), id: "event_#{event.id}", class: "view_link" %>
           </td> 
         </tr>

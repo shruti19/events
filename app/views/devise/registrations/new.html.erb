@@ -9,6 +9,10 @@
     <%= f.text_field :first_name, class: 'xmedium', :placeholder => 'First Name' %>
     <%= f.text_field :last_name, class: 'xmedium', :placeholder => 'Last Name' %>
   </div>
+  <div><%= f.label "Gender" %><br />
+    <%= f.radio_button :gender, :male %> Male
+    <%= f.radio_button :gender, :female %> Female
+  </div>
   <div><%= f.label :password %> 
   	<!-- <%# if @validatable %><i>(<%#= @minimum_password_length %> characters minimum)</i><%# end %><br /> -->
   	<br/>

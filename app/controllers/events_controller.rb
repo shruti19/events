@@ -16,8 +16,16 @@ class EventsController < ApplicationController
 	end
 
 	def attend
-		current_user.events << Event.find(params[:id]) if params[:perform] == "attend"
-		current_user.attendees.where(event_id: params[:id]).destroy_all if params[:perform] == "unattend"
+		if params[:perform] == "attend"
+			event = Event.find(params[:id]) 
+			discount = event.discount_applicable? current_user
+			current_user.events << event
+			current_user.attendees.find_by(event_id: params[:id]).update(
+				discount_earned: discount
+				) if discount.present?
+		elsif params[:perform] == "unattend"
+			current_user.attendees.where(event_id: params[:id]).destroy_all
+		end
 	  redirect_to events_path
 	end
 

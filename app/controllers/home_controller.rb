@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
 	def index
-		# raise "signed out"
+		@events = Event.list "top_events"
+		puts @events.inspect
 	end
 end

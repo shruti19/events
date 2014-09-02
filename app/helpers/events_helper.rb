@@ -1,6 +1,6 @@
 module EventsHelper
 	def status event
-		if current_user.events.where("events.id=?",event.id).present?
+		if current_user.events.where("events.id=? and due_date >= ? ",event.id, Date.today).present?
 	    can 'unattend', event.id
 	  else
 	    can 'attend', event.id
@@ -16,4 +16,11 @@ module EventsHelper
 			class: 'action_items ' + perform
 			)
 	end
+
+	def user_event_status event
+		current_user.attendees.find_by(event_id: event.id).present? ? "Attending" : "Not Attending"
+	end
+
+
+
 end

@@ -1,5 +1,12 @@
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<%= csrf_meta_tags %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Be Rendezvoused</title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
 
 <%= render '/commons/links'%>
 <%= javascript_include_tag '/assets/events.js' %>
@@ -74,3 +81,8 @@
   <div class="user_container">
 		<%=yield%>
  </div>
+
+
+
+</body>
+</html>

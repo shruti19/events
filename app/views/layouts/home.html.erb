@@ -1,5 +1,12 @@
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<%= csrf_meta_tags %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Be Rendezvoused</title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
 
 <%= render '/commons/links'%>
 <%= stylesheet_link_tag '/assets/home.css' %>
@@ -65,8 +72,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<!-- <div class="panel panel-default">
-  <div class="panel-body"> -->
 		<%=yield%>
-  <!-- </div>
-</div> -->
+
+
+</body>
+</html>

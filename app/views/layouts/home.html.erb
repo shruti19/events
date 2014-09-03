@@ -14,7 +14,14 @@
       </button>
       <a class="navbar-brand" href="#">Logo</a>
     </div>
-
+     
+    <% flash.each do |name, msg| -%>
+      <script type="text/javascript">
+        if(<%= msg.present? %>) { fadein_flash(); }
+      </script>
+      <%= content_tag :div, msg, class: "#{name} flash" %>
+    <% end -%>
+    
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">

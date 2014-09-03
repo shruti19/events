@@ -70,3 +70,29 @@ textarea{
 .view_link{
   
 }
+
+.flash{
+	display: none;
+	position: absolute;
+	z-index: 100;
+	border-radius: 5px;
+	padding: 1%;
+	text-align: center;
+	margin: 38 32%;
+}
+
+.error{
+	border: 1px solid #CC3300;
+	background-color: #ebccd1; /* #f2dede; #a94442;*/
+	color: #CC3300;
+}
+.notice{
+	border: 1px solid #FFCC00;
+	background-color: #FEF6B9; 
+	color: #FFCC00;
+}
+.alert{
+	border: 1px solid green;
+	background-color: #dff0d8; 
+	color: green;
+}

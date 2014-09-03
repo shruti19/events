@@ -8,7 +8,7 @@ module EventsHelper
 	end
 
 	def can perform, event_id
-		icn_class = perform == 'attend' ? 'glyphicon-ok' : 'glyphicon-remove'
+		icn_class = perform == 'attend' ? 'glyphicon-ok-sign' : 'glyphicon-remove-sign'
 		link_to( 
 			"<span class=''></span> #{perform.capitalize}".html_safe, 
 			attend_event_path(id: event_id, perform: perform.to_s), 

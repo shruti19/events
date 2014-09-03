@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Be Rendezvoused</title>
+      <title>EventsApp</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <%= render '/commons/links'%>
+  <%= javascript_include_tag '/assets/events.js' %>
+  <%= stylesheet_link_tag '/assets/events.css' %>
 </head>
 <body>
 
-
-<%= render '/commons/links'%>
-<%= javascript_include_tag '/assets/events.js' %>
-<%= stylesheet_link_tag '/assets/events.css' %>
 
 
 <nav class="navbar navbar-default" role="navigation">

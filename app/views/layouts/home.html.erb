@@ -4,12 +4,12 @@
   <title>Be Rendezvoused</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render '/commons/links'%>
+  <%= stylesheet_link_tag '/assets/home.css' %>
 </head>
 <body>
 
 
-<%= render '/commons/links'%>
-<%= stylesheet_link_tag '/assets/home.css' %>
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">

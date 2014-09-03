@@ -19,13 +19,13 @@ class EventsController < ApplicationController
 
 	def attend
 		begin
+			@event = Event.find(params[:id])
 			if params[:perform] == "attend"
-				@event = Event.find(params[:id])
 				notice = "You participation in event #{@event.name} is recorded."
 				current_user.events << @event
 				current_user.attendees.find_by(event_id: params[:id]).update(
 					discount_earned: DISCOUNT_FOR_FEMALE
-					) if discount.discount_applicable? current_user
+					) if @event.discount_applicable? current_user
 			elsif params[:perform] == "unattend"
 				notice = "You participation in event #{@event.name} has been removed. You may change your participation status anytime later."
 				current_user.attendees.where(event_id: params[:id]).destroy_all

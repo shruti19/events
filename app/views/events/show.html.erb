@@ -1,3 +1,15 @@
+<div class="alert alert-info alert-dismissible view_event" role="alert" style="display:none;">
+   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;
+   </span><span class="sr-only">Close</span></button>
+   <strong>Congrats!!</strong> You are eligible for 5% discount on this event.
+</div>
+
+<div class="panel panel-default view_event">
+  <div class="panel-body">
+   <%= link_to "Back", events_path %>
+  </div>
+</div>
+
 <div class="panel panel-info view_event">
    <div class="panel-heading"><%= @event.name%></div>
 	  <div class="panel-body">
@@ -11,11 +23,14 @@
 	      <%= @event.updated_at.strftime("%d %b %y %H:%M:%S")%> <br>
 	    <label>Total Attending: </label> 
 	      <%= @event.users.size %> <br>
-      <label>Status: </label> 
+      <label>Participation Status: </label> 
         <%= user_event_status @event%> <br>
       
       <% if @event.discount_applicable? current_user %>
-      	<label>You pay: </label> 
+        <% if (user_event_status @event) != "Attending" %>
+	        <script type="text/javascript">show_offer()</script>
+        <% end %>
+      	<label>You Pay: </label> 
       	<%= @event.process_discount %> <br>
       <% end %>
       
@@ -30,3 +45,4 @@
 	  </div>
 
 </div>
+

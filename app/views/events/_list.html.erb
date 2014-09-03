@@ -26,3 +26,17 @@
 <% else %>
   No records found
 <% end %>
+
+<script type="text/javascript">
+	$("#events_list li .tab_link").on('click',function(){
+	  $.ajax({
+	  	url: '/events',
+	  	data: {tab: this.id},
+	  	// dataType: 'html', 
+	  	success: function(data){
+        $("#refreshed_list").html(data);
+	  	}
+	  })
+	});
+
+</script>
